@@ -5,12 +5,7 @@ import { dbConnect} from '@/utils/dbConnect';
 import { Admin } from "@/models/Admin";
 
 import GoogleProvider from "next-auth/providers/google"
- //MONGODB_URL : string = 'mongodb+srv://sujithyadav998:9393038264@cluster2.abpwdpy.mongodb.net/s';
-// NEXT_GOOGLE_CLIENTID = 383202975324-8hfh5l23dtf09cmr3ii08ouai5l5ki19.apps.googleusercontent.com
-// NEXT_CLIENT_SECRET = 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
-// NEXT_AUTH_SECRET = 6XccVdlailBhZ6WSLHugBTVw+01VlXevKeOmiaLZ+Ig=
-// NEXT_AUTH_URL = 'http://localhost:3000'
-
+ 
 export const authOptions :  NextAuthOptions = {
     // Configure one or more authentication providers
     providers: [
