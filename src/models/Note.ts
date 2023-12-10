@@ -10,4 +10,4 @@ const NoteSchema: Schema = new Schema({
   content: { type: String, required: true },
 });
 
-export default mongoose.model<NoteModel>('Note', NoteSchema);
+export default mongoose.models.Note  || mongoose.model<NoteModel>('Note', NoteSchema);
