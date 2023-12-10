@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
-import dbConnect from '../../utils/dbConnect';
+import {dbConnect} from '../../utils/dbConnect';
 import User from '../../models/User';
 import jwt from 'jsonwebtoken';
 import cookie from 'cookie';
