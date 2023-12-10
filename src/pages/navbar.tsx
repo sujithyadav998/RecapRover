@@ -4,9 +4,10 @@ import Cookies from 'js-cookie';
 import {signIn, useSession, signOut} from "next-auth/react"
 
 
-function SignOut()
+async function SignOut()
 {
-  signOut({ redirect: false, callbackUrl: '/' }) // Logout the user
+  console.log("signing out ")
+  await  signOut({ redirect: false, callbackUrl: '/' }) // Logout the user
   window.location.replace('/') // Redirect to the home page after logout
 }
 const Navbar = () => {

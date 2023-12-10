@@ -5,13 +5,25 @@ import { dbConnect} from '@/utils/dbConnect';
 import { Admin } from "@/models/Admin";
 
 import GoogleProvider from "next-auth/providers/google"
+ const clientId  = process.env.NEXT_GOOGLE_CLIENT_ID 
+ const clientSecret = process.env.NEXT_CLIENT_SECRET
+
+ if (!clientId) {
+    console.error('clientId is not defined in the environment variables.');
+    process.exit(1);
+  }
+  
+  if(!clientSecret) {
+      console.error('clientSecret is not defined in the environment variables.');
+      process.exit(1);
+  }
  
-export const authOptions :  NextAuthOptions = {
+export const authOptions :  any = {
     // Configure one or more authentication providers
     providers: [
         GoogleProvider({
-            clientId: process.env.NEXT_GOOGLE_CLIENT_ID  ,
-            clientSecret: process.env.NEXT_CLIENT_SECRET,
+            clientId: clientId ,
+            clientSecret: clientSecret ,
         }),
         CredentialsProvider({
             id: "credentials",
