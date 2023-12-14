@@ -6,8 +6,15 @@ interface NoteFormData {
   date: string;
   notes: string;
 }
+import { GetServerSideProps } from 'next';
+import { protectRoute } from '../middleware/auth'; 
 
-const NoteForm: React.FC = () => {
+interface ProtectedPageProps {
+  session: any;
+  // Other props if needed
+}
+
+const NoteForm: any = ({ session }: ProtectedPageProps) => {
   const [formData, setFormData] = useState<NoteFormData>({
     date: '',
     notes: '',
@@ -94,4 +101,8 @@ const NoteForm: React.FC = () => {
   );
 };
 
+
+export const getServerSideProps: any= async (context : any) => {
+  return protectRoute(context);
+};
 export default NoteForm;
